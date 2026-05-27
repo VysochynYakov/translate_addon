@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Translator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="pt-popup">
+    <main>
+      <h1>Personal Translator</h1>
+      <p class="pt-help">Write in Russian, click the floating language button, and the text is replaced in place.</p>
+
+      <section>
+        <div class="pt-section-title">
+          <h2>Model profiles</h2>
+          <button id="addModelProfile" class="pt-icon-button" type="button" title="Add model profile">+</button>
+        </div>
+
+        <label>
+          Active model
+          <select id="modelProfileSelect"></select>
+        </label>
+
+        <label>
+          Profile name
+          <input id="modelProfileName" type="text" autocomplete="off" placeholder="Mistral Small">
+        </label>
+
+        <label>
+          Mistral model
+          <input id="model" type="text" autocomplete="off" placeholder="mistral-small-latest">
+        </label>
+
+        <label>
+          API key
+          <input id="apiKey" type="password" autocomplete="off" placeholder="Optional if config.js exists">
+        </label>
+
+        <button id="deleteModelProfile" class="pt-danger" type="button">Delete selected model</button>
+      </section>
+
+      <section>
+        <div class="pt-section-title">
+          <h2>Languages</h2>
+        </div>
+
+        <label>
+          Translate to
+          <select id="targetLanguage"></select>
+        </label>
+
+        <div class="pt-inline-form">
+          <input id="newLanguage" type="text" autocomplete="off" placeholder="Add language">
+          <button id="addLanguage" class="pt-icon-button" type="button" title="Add language">+</button>
+        </div>
+
+        <ul id="languageList" class="pt-list"></ul>
+      </section>
+
+      <button id="save" type="button">Save settings</button>
+      <button id="resetButtonPosition" class="pt-secondary" type="button">Reset floating button position</button>
+      <button id="openShortcuts" class="pt-secondary" type="button">Change keyboard shortcut</button>
+      <p id="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
